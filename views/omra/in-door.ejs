@@ -1,0 +1,313 @@
+<!DOCtype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome-4.6.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <title>liberty</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="/css/index.css">
+
+</head>
+
+<body>
+
+    <!------------- Navbar ------------------->
+
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img src="/img/logo.jpg" style="width: 70px;bottom: 24px;position:relative;">
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#x1">الرئيسية</a></li>
+                  <li><a href="/user/allOmra">رحلات عمرة</a></li>
+                  <li><a href="/user/allHajj">رحلات حج</a></li>
+                  <li><a href="/user/allInternalTourism"> سياحه داخلية</a></li>
+                  <li><a href="/user/allExternalTourism"> سياحه خارجية</a></li>
+                  <li><a href="#x2"> خدماتنا </a></li>
+                  <li><a href="#x3"> تواصل معنا</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!------------- section1 ----------------->
+    <div class="omra" id="x1">
+        <div class="ss2 row">
+
+            <h1 class="lead text-center">اقوي عروض العمره </h1>
+            <h3 class="text-center"> "راحه العملاء"</h3>
+
+        </div>
+    </div>
+    <section class="omra2" style="padding: 7%">
+
+
+        <div class="container">
+            <div class="row">
+
+              <% data.forEach(function(trip){ %>
+                              <div class="col-md-3 col-sm-6">
+                                  <div class="wrimagecard wrimagecard-topimage">
+                                      <a href="" data-title="Edit" data-toggle="modal" data-target="#x2">
+                                        <h4 class="text-center">
+                                            images for omra
+                                        </h4>
+                                    <% trip.imgs.forEach(function(img){ %>
+                                          <div class="wrimagecard-topimage_header x3">
+                                              <img src="/imgs/<%= img %>" style="width: 100%">
+
+                                          </div>
+                                      <% })%>
+                                      <h4 class="text-center">
+                                          images for hotel
+                                      </h4>
+                                      <% trip.hotelImages.forEach(function(img){ %>
+                                            <div class="wrimagecard-topimage_header x3">
+                                                <img src="/imgs/<%= img %>" style="width: 100%">
+
+                                            </div>
+                                        <% })%>
+
+                                          <div class="wrimagecard-topimage_title">
+
+                                              <h4 class="text-center">
+                                                  <%= trip.name %>
+                                              </h4>
+                                              <h4 class="text-center">
+                                                  <%= trip.desc %>
+                                              </h4>
+                                              <h4 class="text-center">
+                                                  <%= trip.price %>
+                                              </h4>
+                                              <h4 class="text-center">
+                                                  <%= trip.hotelName %>
+                                              </h4>
+                                              <h4 class="text-center">
+                                                  <%= trip.contact %>
+                                              </h4>
+                                              <h4 class="text-center">
+                                                  <%= trip.time %>
+                                              </h4>
+                                              <h4 class="text-center">
+                                                  <%= trip.from %>
+                                              </h4>
+                                              <h4 class="text-center">
+                                                  <%= trip.to %>
+                                              </h4>
+                                              <h4 class="text-center">
+                                                  <%= trip.discount %>
+                                              </h4>
+                                              <% trip.servises.forEach(function(servise){ %>
+                                                      <h4  class="text-center">
+                                                           <%= servise %>
+                                                      </h4>
+                                                <% })%>
+
+                                          </div>
+                                      </a>
+                                  </div>
+                              </div>
+              <% }) %>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="modal fade" id="x5" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+        <div class="modal-dialog" style="width: 60%;margin: 15px auto;">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul style="text-align: right;margin-right: 10%;">
+                                <li> : الاسم</li>
+                                <li> : الوصف</li>
+                                <li> : صور الفندق</li>
+                                <li> : السعر</li>
+                                <li> : الخدمات </li>
+                                <li> : اسم الفندق </li>
+                                <li> : وصف الفندق </li>
+                                <li> : صور الفندق</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------------- services ----------------->
+
+
+    <section id="footer">
+        <div class="container">
+            <div class="row text-center text-xs-center text-sm-left text-md-left">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fliberty00%2Fabout%2F%3Fref%3Dpage_internal&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId" width="100%" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h5> تواصل معنا</h5>
+                    <ul class="list-unstyled quick-links">
+
+                        <li>01093555645 <i class="fas fa-mobile-alt"></i> </li>
+                        <li> 048/2238882 <i class="fas fa-phone"></i></li>
+                        <li> شارع طلعت حرب - شبين الكوم -المنوفية <i class="fas fa-map-marker-alt"></i> </li>
+                        <li>hamdy.liberty@yahoo.com <i class="fas fa-envelope-square"></i> </li>
+
+
+                    </ul>
+                </div>
+
+
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h5>اهم الروابط </h5>
+                    <ul class="list-unstyled quick-links">
+                      <li><a href="">الرئيسية <i class="fa fa-angle-double-left"></i></a></li>
+                      <li><a href="/umrah/allOmra">رحلات عمرة <i class="fa fa-angle-double-left"></i></a></li>
+                      <li><a href="/hajj/allHajj">رحلات حج <i class="fa fa-angle-double-left"></i></a></li>
+                      <li><a href="/InternalTourism/allInternalTourism">سياحة داخلية <i class="fa fa-angle-double-left"></i> </a></li>
+                      <li><a href="/ExternalTourism/allExternalTourism">سياحة خارجيه <i class="fa fa-angle-double-left"></i></a></li>
+                      <li><a href="/">خدماتنا <i class="fa fa-angle-double-left"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="row footer-bottom">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+
+                <p> 2018 &copy; Designed by <a class="text-green ml-2" href="" target="_blank">Orxtra</a></p>
+            </div>
+            <hr>
+        </div>
+    </section>
+    <!--
+    <footer class="section6" id="x6">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="text-left page-footer-inner"> 2018 &copy; Designed by
+                        <a href="http://orxtradev.com/" target="_blank">orxtra</a>
+                    </div>
+                </div>
+                <div class="col-md-8 text-right">
+                    <ul>
+                        <li><a href="">الرئيسية</a></li>
+                        <li><a href="">رحلات عمره </a></li>
+                        <li><a href="">رحلات حج</a></li>
+                        <li><a href="">سياحة داخليه </a></li>
+                        <li><a href="">سياحه خارجيه </a></li>
+                        <li><a href="">خدماتنا </a></li>
+                        <li><a href="">تواصل معنا </a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!--  <div class="scroll-to-top">
+            <i class="fa fa-arrow fa-3x"></i>
+        </div>
+    <!------------------------------ scripts ---------------------------->
+    <script>
+        $(document).ready(function() {
+            $('#quote-carousel').carousel({
+                pause: true,
+                interval: 4000,
+            });
+        });
+
+    </script>
+
+
+    <script>
+        //update this with your js_form selector
+        var form_id_js = "javascript_form";
+
+        var data_js = {
+            "access_token": "76i5c7hfmqhtjn4bzma0ulwv"
+        };
+
+        function js_onSuccess() {
+            // remove this to avoid redirect
+            window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
+        }
+
+        function js_onError(error) {
+            // remove this to avoid redirect
+            window.location = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
+        }
+
+        var sendButton = document.getElementById("js_send");
+
+        function js_send() {
+            sendButton.value = 'Sending…';
+
+        }
+
+        sendButton.onclick = js_send;
+
+        function toParams(data_js) {
+            var form_data = [];
+            for (var key in data_js) {
+                form_data.push(encodeURIComponent(key) + "=" + encodeURIComponent(data_js[key]));
+            }
+
+            return form_data.join("&");
+        }
+
+        var js_form = document.getElementById(form_id_js);
+        js_form.addEventListener("submit", function(e) {
+            e.preventDefault();
+        });
+
+    </script>
+
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/js/bootstrap-arabic.min.js"></script>
+    <script src="/js/animation_slider.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+
+</body>
+
+</html>
