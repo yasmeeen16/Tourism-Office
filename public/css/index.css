@@ -242,7 +242,10 @@ body {
 }
 
 .section1 h1,
-.omra h1{
+.omra h1,
+.hej h1,
+.indoor h1 ,
+.outdoor h1{
     font-size: 36px;
     font-weight: bolder;
     padding-top: 18%
@@ -296,11 +299,43 @@ body {
     height:100%
 }
 
-.omra .ss2 {
+.ss2 {
     padding: 0 0 15% 0;
     background: #000000b8;
     color: #fff;
 }
+
+.hej {
+    background: url(../img/omra.jpg);
+ background-size: 100%;
+
+     background-position: bottom;
+    background-repeat: no-repeat;
+    height:100%
+}
+
+
+.indoor {
+    background: url(../img/x.jpeg);
+ background-size: 100%;
+
+     background-position: bottom;
+    background-repeat: no-repeat;
+    height:100%
+}
+
+.outdoor {
+    background: url(../img/x4.jpg);
+ background-size: 100%;
+
+     background-position: bottom;
+    background-repeat: no-repeat;
+    height:100%
+}
+
+
+
+
 /***************************** section2 *********************/
 
 section {
@@ -863,7 +898,7 @@ footer a:hover {
     blockquote {
         font-size: 12px
     }
-    
+
     .section6 .row {
         text-align: center
     }
@@ -1074,7 +1109,7 @@ section .section-title {
     padding-bottom: 6px;
     margin-bottom: 20px;
     color:#333;
-    
+
     text-align: right;
 }
 #footer a {
@@ -1105,7 +1140,7 @@ section .section-title {
 	color:#000;
 }
 #footer ul.quick-links li{
-    
+
     text-align: right;
     margin-right: 7%;
 	padding: 3px 0;
@@ -1136,7 +1171,7 @@ section .section-title {
 
 
 .footer-bottom{
-  
+
     font-size: 14px;
     background: #b9b7b7;
 }

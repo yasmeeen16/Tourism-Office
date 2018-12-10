@@ -21,8 +21,8 @@ Router.post("/addHajj",uploadMid.any(),function(req,resp){
     if(!(req.session.email && req.session.password )){
         resp.redirect('/auth/login');
     }else{
-      
-    
+
+
     var name = req.body.name;
     var desc = req.body.desc;
     var price = req.body.price;
@@ -76,7 +76,7 @@ Router.post("/addHajj",uploadMid.any(),function(req,resp){
                                   }else
                                   resp.redirect('/hajj/ListOfHajj');
                                   //resp.json({ hajj : hajj });
-  
+
                                 });//save the object
                         }
                     });
@@ -95,12 +95,7 @@ Router.get('/allHajj',function(req,resp,next){
 });
 
 
-Router.get('/',function(req,resp,next){
 
-        resp.redirect('/hajj/allHajj');
-
-
-});
 Router.get('/ListOfHajj',function(req,resp,next){
   HajjModel.find({}, function(err, hajjTrips) {
                                   if(!err){

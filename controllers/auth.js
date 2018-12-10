@@ -46,7 +46,7 @@ Router.post('/login',BodyParserMid,function(req,resp){
                           req.session.email=req.body.email;
                           req.session.password=req.body.password;
                           const jsontoken = jwt.sign({user: user},'mysecret-key');
-                            resp.redirect('/hajj/addHajj');
+                            resp.redirect('/umrah/addUmrah');
                       }else {
                         resp.redirect('/auth/login');
                           //resp.json([{err:"password not valid"},false]);

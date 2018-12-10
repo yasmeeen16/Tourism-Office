@@ -46,13 +46,13 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#x1">الرئيسية</a></li>
+                  <li><a href="/">الرئيسية</a></li>
                   <li><a href="/user/allOmra">رحلات عمرة</a></li>
                   <li><a href="/user/allHajj">رحلات حج</a></li>
                   <li><a href="/user/allInternalTourism"> سياحه داخلية</a></li>
                   <li><a href="/user/allExternalTourism"> سياحه خارجية</a></li>
-                  <li><a href="#x2"> خدماتنا </a></li>
-                  <li><a href="#x3"> تواصل معنا</a></li>
+                  <li><a href="/"> خدماتنا </a></li>
+                  <li><a href="/"> تواصل معنا</a></li>
                 </ul>
             </div>
 
@@ -60,10 +60,10 @@
     </div>
 
     <!------------- section1 ----------------->
-    <div class="omra" id="x1">
+    <div class="hej" id="x1">
         <div class="ss2 row">
 
-            <h1 class="lead text-center">اقوي عروض العمره </h1>
+            <h1 class="lead text-center">اقوى عروض الحج  </h1>
             <h3 class="text-center"> "راحه العملاء"</h3>
 
         </div>
@@ -75,101 +75,75 @@
             <div class="row">
 
 
-
               <% data.forEach(function(trip){ %>
-                              <div class="col-md-3 col-sm-6">
-                                  <div class="wrimagecard wrimagecard-topimage">
-                                      <a href="" data-title="Edit" data-toggle="modal" data-target="#x2">
-                                        <h4 class="text-center">
-                                            images for omra
-                                        </h4>
-                                    <% trip.imgs.forEach(function(img){ %>
-                                          <div class="wrimagecard-topimage_header x3">
-                                              <img src="/imgs/<%= img %>" style="width: 100%">
+                            <div class="col-md-3 col-sm-6">
+                              <div class="wrimagecard wrimagecard-topimage">
+                                  <a href="" data-title="Edit" data-toggle="modal" data-target="#<%= trip._id%>">
+                                      <div class="wrimagecard-topimage_header x3">
+                                          <img src="/imgs/<%= trip.imgs[0] %>" style="width: 100%">
 
-                                          </div>
-                                      <% })%>
-                                      <h4 class="text-center">
-                                          images for hotel
-                                      </h4>
-                                      <% trip.hotelImages.forEach(function(img){ %>
-                                            <div class="wrimagecard-topimage_header x3">
-                                                <img src="/imgs/<%= img %>" style="width: 100%">
+                                      </div>
+                                      <div class="wrimagecard-topimage_title">
+                                          <h4 class="text-center">
+                                              <%= trip.name%>
+                                          </h4>
+                                      </div>
+                                  </a>
+                              </div>
+                          </div>
 
-                                            </div>
-                                        <% })%>
 
-                                          <div class="wrimagecard-topimage_title">
 
-                                              <h4 class="text-center">
-                                                  <%= trip.name %>
-                                              </h4>
-                                              <h4 class="text-center">
-                                                  <%= trip.desc %>
-                                              </h4>
-                                              <h4 class="text-center">
-                                                  <%= trip.price %>
-                                              </h4>
-                                              <h4 class="text-center">
-                                                  <%= trip.hotelName %>
-                                              </h4>
-                                               <% trip.servises.forEach(function(servise){ %>
-                                                      <h4  class="text-center">
-                                                           <%= servise %>
-                                                      </h4>
+
+                  <div class="modal fade" id="<%= trip._id%>" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                      <div class="modal-dialog" style="width: 60%;margin: 15px auto;">
+                          <div class="modal-content">
+                              <div class="modal-body">
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                  </button>
+                                  <div class="row">
+                                      <div class="col-md-12">
+                                          <ul style="text-align: right;margin-right: 10%;">
+                                              <li><%= trip.name %> : الاسم</li>
+                                              <li> <%= trip.desc %> : الوصف</li>
+                                              <li> :صور <% trip.imgs.forEach(function(img){ %>
+                                                    <div class="wrimagecard-topimage_header x3">
+                                                        <img src="/imgs/<%= img %>" style="width: 100%">
+
+                                                    </div>
                                                 <% })%>
-                                              <h4 class="text-center">
-                                                  <%= trip.from %>
-                                              </h4>
-                                              <h4 class="text-center">
-                                                  <%= trip.to %>
-                                              </h4>
-                                              
-                                              <h4 class="text-center">
-                                                  published in : <%= trip.time %>
-                                              </h4>
-                                             
+                                              </li>
+                                              <li> <%= trip.price %> : السعر</li>
+                                              <li> <% trip.servises.forEach(function(servise){ %>
+                                                  <h4  class="text-center">
+                                                       <%= servise %>
+                                                  </h4>
+                                              <% })%> : الخدمات </li>
+                                              <li>   <%= trip.hotelName %> : اسم الفندق </li>
+                                              <li>   <%= trip.from %> : الذهاب </li>
+                                              <li>   <%= trip.to %> : الغوده </li>
+                                              <li> : صور الفندق<% trip.hotelImages.forEach(function(img){ %>
+                                                    <div class="wrimagecard-topimage_header x4">
+                                                        <img src="/imgs/<%= img %>" style="width: 100%">
 
-                                          </div>
-                                      </a>
+                                                    </div>
+                                                <% })%> </li>
+
+                                          </ul>
+                                      </div>
                                   </div>
                               </div>
+                          </div>
+                      </div>
+                  </div>
               <% }) %>
             </div>
 
         </div>
 
     </section>
-
-    <div class="modal fade" id="x5" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-        <div class="modal-dialog" style="width: 60%;margin: 15px auto;">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                    </button>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ul style="text-align: right;margin-right: 10%;">
-                                <li> : الاسم</li>
-                                <li> : الوصف</li>
-                                <li> : صور الفندق</li>
-                                <li> : السعر</li>
-                                <li> : الخدمات </li>
-                                <li> : اسم الفندق </li>
-                                <li> : وصف الفندق </li>
-                                <li> : صور الفندق</li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!------------- services ----------------->
-
+                  <!-- services ----------------->
 
     <section id="footer">
         <div class="container">

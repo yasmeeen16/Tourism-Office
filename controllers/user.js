@@ -28,6 +28,13 @@ Router.get('/allHajj',function(req,resp,next){
                                 });
 });
 
+Router.get('/',function(req,resp,next){
+        
+        resp.render('omra/index.ejs');
+
+
+});
+
 Router.get('/allOmra',function(req,resp,next){
 
     umrahModel.find({}, function(err, omraTrips) {

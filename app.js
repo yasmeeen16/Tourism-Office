@@ -22,9 +22,11 @@ server.use(session({
 
 var userRouts = require("./controllers/user.js");
 server.use("/user",userRouts);
+server.use("/",userRouts);
 
 var authRouts = require("./controllers/auth.js");
 server.use("/auth",authRouts)
+
 //Auth MidWare.
 server.use(function(req,resp,next){
     if(!(req.session.email && req.session.password )){
@@ -40,7 +42,7 @@ server.use("/auth",authRouts);
 
 var hajjRouts = require("./controllers/hajj.js");
 server.use("/hajj",hajjRouts);
-server.use("/",hajjRouts);
+
 
 var umrahRouts = require("./controllers/Umrah.js");
 server.use("/umrah",umrahRouts );
