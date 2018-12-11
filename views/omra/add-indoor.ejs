@@ -45,59 +45,60 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </head>
 
- <body class="sticky-header left-side-collapsed"  onload="initMap()">
+<body class="sticky-header left-side-collapsed">
     <section>
-    <!-- left side start-->
-		<div class="left-side sticky-left-side">
+        <!-- left side start-->
+        <div class="left-side sticky-left-side">
 
-			<!--logo and iconic logo start-->
-			<div class="logo">
-				<h1><a href="index.html"> ليبرتي للسياحة </a></h1>
-			</div>
-			<div class="logo-icon text-center">
-				<a href="index.html"><i class="lnr lnr-home"></i> </a>
-			</div>
+            <!--logo and iconic logo start-->
+            <div class="logo">
+                <h1><a href="index.html"> ليبرتي للسياحة </a></h1>
+            </div>
+            <div class="logo-icon text-center">
+                <a href="index.html"><i class="lnr lnr-home"></i> </a>
+            </div>
 
-			<!--logo and iconic logo end-->
-			<div class="left-side-inner">
+            <!--logo and iconic logo end-->
+            <div class="left-side-inner">
 
-				<!--sidebar nav start-->
-				<ul class="nav nav-pills nav-stacked custom-nav">
-						<li><a href="index.html"> <span>الرئيسية</span> <i class="fas fa-tachometer-alt"></i></a></li>
-						<li class="menu-list">
-							<a href="#">
-                              <span>عمرة</span>  <i class="fas fa-location-arrow"></i>
-								    </a>
-								<ul class="sub-menu-list">
-									<li><a href="omra.html">عرض</a> </li>
-									<li><a href="add-omra.html">اضافة</a></li>
-								</ul>
-						</li>
+                <!--sidebar nav start-->
+                <ul class="nav nav-pills nav-stacked custom-nav">
+                    <li><a href="index.html"> <span>الرئيسية</span> <i class="fas fa-tachometer-alt"></i></a></li>
+                    <li class="menu-list">
+                        <a href="#">
+                            <span>عمرة</span> <i class="fas fa-location-arrow"></i>
+                        </a>
+                        <ul class="sub-menu-list">
+                            <li><a href="/umrah/ListOfOmra">عرض</a> </li>
+                            <li><a href="/umrah/addUmrah">اضافة</a></li>
+                        </ul>
+                    </li>
 
-                        <li class="menu-list">
-                            <a href="#"> <span>حج</span> <i class="fas fa-location-arrow"></i> </a>
-							<ul class="sub-menu-list">
-                                <li><a href="hej.html">عرض</a> </li>
-                                <li><a href="add-hej.html">اضافة</a></li>
-							</ul>
-						</li>
-						<li class="menu-list">
-                            <a href="#"> <span> سياحة داخليه</span> <i class="fas fa-campground"></i></a>
-							<ul class="sub-menu-list">
-								  <li><a href="indoor.html">عرض</a> </li>
-                                <li><a href="add-indoor.html">اضافة</a></li>
-							</ul>
-						</li>
+                    <li class="menu-list">
+                        <a href="#"> <span>حج</span> <i class="fas fa-location-arrow"></i> </a>
+                        <ul class="sub-menu-list">
+                            <li><a href="/hajj/ListOfHajj">عرض</a> </li>
+                            <li><a href="/hajj/addHajj">اضافة</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-list">
+                        <a href="#"> <span> سياحة داخليه</span> <i class="fas fa-campground"></i></a>
+                        <ul class="sub-menu-list">
+                            <li><a href="/InternalTourism//ListOfInternalTourism">عرض</a> </li>
+                            <li><a href="/InternalTourism/addInternalTourism">اضافة</a></li>
+                        </ul>
+                    </li>
 
 
-                        <li class="menu-list">
-                            <a href="#"><span>سياحة خارجية</span> <i class="fas fa-hiking"></i> </a>
-							<ul class="sub-menu-list">
-								  <li><a href="outdoor.html">عرض</a> </li>
-                                <li><a href="add-outdoor.html">اضافة</a></li>
-							</ul>
-						</li>
-					</ul>
+                    <li class="menu-list">
+                        <a href="#"><span>سياحة خارجية</span> <i class="fas fa-hiking"></i> </a>
+                        <ul class="sub-menu-list">
+                            <li><a href="/ExternalTourism/ListOfExternalTourism">عرض</a> </li>
+                            <li><a href="/ExternalTourism/addExternalTourism">اضافة</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
 
                 <!--sidebar nav end-->
 			</div>
@@ -245,60 +246,67 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</footer>
         <!--footer section end-->
 	</section>
-	 <script>
-        (function($) {
-            $(function() {
+  <script>
+      (function($) {
+          $(function() {
+              $('.datepicker').datepicker({
+                  //  maxDate:new Date(),
+                  changeYear:true,
+                  changeMonth:true,
+                  format:'dd/mm/yyyy'
+                  });
 
-                var addFormGroup = function(event) {
-                    event.preventDefault();
+              var addFormGroup = function(event) {
+                  event.preventDefault();
 
-                    var $formGroup = $(this).closest('.form-group');
-                    var $multipleFormGroup = $formGroup.closest('.multiple-form-group');
-                    var $formGroupClone = $formGroup.clone();
+                  var $formGroup = $(this).closest('.form-group');
+                  var $multipleFormGroup = $formGroup.closest('.multiple-form-group');
+                  var $formGroupClone = $formGroup.clone();
 
-                    $(this)
-                        .toggleClass('btn-default btn-add btn-danger btn-remove')
-                        .html('–');
+                  $(this)
+                      .toggleClass('btn-default btn-add btn-danger btn-remove')
+                      .html('–');
 
-                    $formGroupClone.find('input').val('');
-                    $formGroupClone.insertAfter($formGroup);
+                  $formGroupClone.find('input').val('');
+                  $formGroupClone.insertAfter($formGroup);
 
-                    var $lastFormGroupLast = $multipleFormGroup.find('.form-group:last');
-                    if ($multipleFormGroup.data('max') <= countFormGroup($multipleFormGroup)) {
-                        $lastFormGroupLast.find('.btn-add').attr('disabled', true);
-                    }
-                };
+                  var $lastFormGroupLast = $multipleFormGroup.find('.form-group:last');
+                  if ($multipleFormGroup.data('max') <= countFormGroup($multipleFormGroup)) {
+                      $lastFormGroupLast.find('.btn-add').attr('disabled', true);
+                  }
+              };
 
-                var removeFormGroup = function(event) {
-                    event.preventDefault();
+              var removeFormGroup = function(event) {
+                  event.preventDefault();
 
-                    var $formGroup = $(this).closest('.form-group');
-                    var $multipleFormGroup = $formGroup.closest('.multiple-form-group');
+                  var $formGroup = $(this).closest('.form-group');
+                  var $multipleFormGroup = $formGroup.closest('.multiple-form-group');
 
-                    var $lastFormGroupLast = $multipleFormGroup.find('.form-group:last');
-                    if ($multipleFormGroup.data('max') >= countFormGroup($multipleFormGroup)) {
-                        $lastFormGroupLast.find('.btn-add').attr('disabled', false);
-                    }
+                  var $lastFormGroupLast = $multipleFormGroup.find('.form-group:last');
+                  if ($multipleFormGroup.data('max') >= countFormGroup($multipleFormGroup)) {
+                      $lastFormGroupLast.find('.btn-add').attr('disabled', false);
+                  }
 
-                    $formGroup.remove();
-                };
+                  $formGroup.remove();
+              };
 
-                var countFormGroup = function($form) {
-                    return $form.find('.form-group').length;
-                };
+              var countFormGroup = function($form) {
+                  return $form.find('.form-group').length;
+              };
 
-                $(document).on('click', '.btn-add', addFormGroup);
-                $(document).on('click', '.btn-remove', removeFormGroup);
+              $(document).on('click', '.btn-add', addFormGroup);
+              $(document).on('click', '.btn-remove', removeFormGroup);
 
-            });
-        })(jQuery);
-    </script>
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+          });
+      })(jQuery);
+  </script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 
-<script src="js/jquery.nicescroll.js"></script>
-<script src="js/scripts.js"></script>
-<!-- Bootstrap Core JavaScript -->
-   <script src="js/bootstrap.min.js"></script>
+
+  <script src="/js/jquery.nicescroll.js"></script>
+  <script src="/js/scripts.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="/js/bootstrap.min.js"></script>
 </body>
 </html>
