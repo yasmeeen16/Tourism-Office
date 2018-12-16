@@ -31,7 +31,10 @@ server.use("/auth",authRouts)
 server.use(function(req,resp,next){
     if(!(req.session.email && req.session.password )){
         resp.redirect('/auth/login');
-    }else{
+    }// }else if(req.session.email && req.session.password ){
+    //     resp.redirect('/hajj/addHajj');
+    // }
+    else{
       next();
     }
 

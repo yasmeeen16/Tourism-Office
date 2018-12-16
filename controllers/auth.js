@@ -15,11 +15,15 @@ var adminModel = mongoose.model('auth');
 const path = require('path');
  //var ClientModel = mongoose.model('clientData');
 Router.get('/login',function(req,resp){
-    resp.render("omra/sign-in.ejs");
-
+  if(req.session.email && req.session.password ){
+      resp.redirect('/hajj/addHajj');
+    }else{
+      resp.render("omra/sign-in.ejs");
+    }
 });
 
 Router.post('/login',BodyParserMid,function(req,resp){
+
         var email = req.body.email;
         var password = req.body.password;
         //for validation
