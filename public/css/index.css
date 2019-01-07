@@ -1180,3 +1180,176 @@ section .section-title {
 .footer-bottom p{
     margin: 10px 0 0 0
  }
+.details{
+  float: right;
+  direction: rtl;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.col-md-6 {
+
+    width: 47%;
+
+}
+.carousel-inner
+{
+  margin-left: 0;
+  width: 100%;
+  height: 300px;
+}
+.carousel-inner > .item > a > img, .carousel-inner > .item > img
+{
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+.slider2
+{
+  width: 60%;
+  height: 200px;
+  margin-left: 17px;
+}
+.thumbnail a > img, .thumbnail > img{
+  margin-top: 30px;
+}
+#carousel2{
+  height: 200px;
+}
+.car{
+  width: 70%;
+  margin: auto;
+}
+.carousel-inner > .item
+{
+  width: 100%;
+  height: 100%;
+}
+.trip-name
+{
+  font-size: 22px;
+  font-weight: 600;
+  color: rgb(45,45,45);
+}
+.hotel-name
+{
+  font-size: 13px;
+  font-weight: 400;
+  color: rgb(162,168,177);
+    margin-bottom: 25px;
+}
+.trip-details
+{
+  font-size: 12px;
+  font-weight: 400;
+  width: 100%;
+  line-height: 21px;
+  color: rgb(67,76,91);
+
+}
+.price
+{
+  display: inline;
+  float: right;
+  width: 90%;
+  height: 30px;
+  color: white;
+  background-color: rgb(66,54,221);
+  border-radius: 3px;
+  text-align: center;
+
+}
+.price_p
+{
+    font-size: 16px;
+    padding-top: 10px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.first-section
+{
+  margin-bottom: 30px;
+}
+.second-section
+{
+  list-style-type: none;
+  padding: 0;
+}
+.second-section li p
+{
+  font-size: 12px;
+  font-weight: 400;
+  display: inline-block;
+
+}
+.second-section-item
+{
+  line-height: 19.2px;
+  padding: .2em 0;
+}
+
+.fa, .fas
+{
+  color: green;
+  margin-left: 10px;
+  height: 8px;
+  width: 8px;
+}
+.dates,.dates2
+{
+list-style-type:none;
+padding: 0;
+width: 100%;
+
+}
+.dates li div,.dates2 li div
+{
+display: inline-block;
+margin-left: 40px;
+
+}
+.dates2{
+  margin-right: 60px;
+}
+
+.return,.go
+{
+  background-color: #E0E0E0;
+  text-align:center;
+  font-size: 16px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-left: 10px;
+  border-radius: 5px;
+  width: 40%;
+  height: 30px;
+}
+.go2,.return2
+{
+  background-color:white;
+  font-size: 14px;
+  margin-left: 20px;
+  width: 40%;
+  height: 30px;
+  color: rgb(249,172,48);
+
+}
+.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next
+{
+  font-size: 20px;
+}
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-next
+{
+  font-size: 20px;
+}
+
+/*responsive*/
+
+@media (min-width:700px)
+{
+  .car,.carousel-control.left,.carousel-control.right
+  {
+    height: 300px;
+  }
+}
