@@ -53,7 +53,7 @@ Router.post("/addInternalTourism",uploadMid.any(),function(req,resp){
 
                            discount: req.body.discount,
                            period: req.body.period,
-                           program: req.body.program,
+                          
                            imgs:imgs,
                            hotelImages:hotelImages,
                            servises:req.body.servises,

@@ -1186,11 +1186,6 @@ section .section-title {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-.col-md-6 {
-
-    width: 47%;
-
-}
 .carousel-inner
 {
   margin-left: 0;
@@ -1306,11 +1301,10 @@ width: 100%;
 .dates li div,.dates2 li div
 {
 display: inline-block;
-margin-left: 40px;
+margin: auto;
+text-align: center;
 
-}
-.dates2{
-  margin-right: 60px;
+
 }
 
 .return,.go
@@ -1322,7 +1316,7 @@ margin-left: 40px;
   padding-bottom: 2px;
   margin-left: 10px;
   border-radius: 5px;
-  width: 40%;
+  width: 46%;
   height: 30px;
 }
 .go2,.return2
@@ -1346,10 +1340,52 @@ margin-left: 40px;
 
 /*responsive*/
 
+@media only screen and (max-width: 991px) {
+  .go,.return
+  {
+  width: 47%;
+  margin-left: 0 !important;
+  }
+  .dates2
+  {
+    margin: auto;
+    width: 100%;
+  }
+  .dates2 li div
+  {
+    width: 49%;
+    margin: auto;
+    text-align: center;
+  }
+  .price
+  {
+    width: 100%;
+  }
+  .return
+  {
+    float: left;
+  }
+}
 @media (min-width:700px)
 {
   .car,.carousel-control.left,.carousel-control.right
   {
     height: 300px;
   }
+}
+
+
+
+@media (min-width:992px){
+.col-md-6 {
+    width: 47%;
+}
+}
+
+
+@media (max-width:991px){
+  .car {
+
+      width: 100%;
+}
 }

@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome-4.6.1/css/font-awesome.min.css" rel="stylesheet">
+  <link href="font-awesome-4.6.1/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
@@ -19,9 +18,11 @@
     <script src="/js/jquery-1.12.3.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/index.css">
-  
+
+
 </head>
 
 <body>
@@ -81,7 +82,7 @@
                               <div class="wrimagecard wrimagecard-topimage">
                                   <a href="" data-title="Edit" data-toggle="modal" data-target="#<%= trip._id%>">
                                       <div class="wrimagecard-topimage_header x3">
-                                          <img src="/imgs/<%= trip.imgs[0] %>" style="width: 100%">
+                                          <img src="/imgs/<%= trip.imgs[0] %>" style="width: 100%; height:200px;">
 
                                       </div>
                                       <div class="wrimagecard-topimage_title">
@@ -214,6 +215,8 @@
                                       </div>
 
                                     </div>
+                                      </div>
+<div class="row">
 
 
                                     <div class="col-lg-12 hotel">
@@ -231,11 +234,11 @@
                                                    <div class="item active">
 
 
-                                                          <img src="/imgs/<%= trip.imgs[0]%>" style="width: 100%; height:100%">
+                                                          <img src="/imgs/<%= trip.hotelImages[0]%>" style="width: 100%; height:100%">
 
 
                                                       </div>
-                                                   <% trip.imgs.forEach(function(img){ %>
+                                                   <% trip.hotelImages.forEach(function(img){ %>
                                                       <div class="item">
                                                              <img src="/imgs/<%= img %>" style="width:100%; height:100%">
                                                          </div>
@@ -412,5 +415,6 @@
     <script src="/js/owl.carousel.min.js"></script>
 
 </body>
+
 
 </html>
