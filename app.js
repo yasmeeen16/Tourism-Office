@@ -1,18 +1,25 @@
 var express = require('express');
 var server = express();
+require('dotenv').config();
+
 var createError = require('http-errors');
 var path = require("path");
 var expressValidator = require('express-validator');
 server.use(expressValidator());
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/tourismOffice');
 
+const CONNECTION_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/tourismOffice';
+mongoose.promise = global.promise;
+
+mongoose.connect(CONNECTION_URI
+  ,{ useNewUrlParser: true }
+);
+
+const PORT = process.env.PORT || 8090 ;
 server.set('views', path.join(__dirname, 'views'));
 server.set("view engine","ejs");
 server.set("views","./views");
 server.use(express.static(path.join(__dirname, 'public')));
-
-
 
 
 var session = require("express-session");
@@ -61,6 +68,6 @@ server.use("/InternalTourism",InternalTourismRouts);
 //   next(createError(404));
 // });
 
-server.listen(8090,function(){
-  console.log('server listen at port number 8090 ...... ');
+server.listen(PORT,function(){
+  console.log('server listen at port number ' + PORT);
 });
